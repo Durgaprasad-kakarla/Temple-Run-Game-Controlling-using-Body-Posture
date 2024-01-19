@@ -7,6 +7,7 @@ from pynput.keyboard import Key,Controller
 cap=cv2.VideoCapture(0)
 detector=pem.poseDetector()
 keyboard=Controller()
+# delayCounter=0
 counter=0
 while True:
     success,img=cap.read()
@@ -21,7 +22,7 @@ while True:
         l1, _, _ = detector.findDistance(left, right)
         # print(p1[1],l1)
         # print(left[0],right[0])
-        # if left[0]<250 and right[0]>600:
+        # if left[0]<250 and right[0]>500:
         #     keyboard.press(Key.space)
         #     keyboard.release(Key.space)
         if l1<80:
@@ -40,6 +41,9 @@ while True:
                 keyboard.release(Key.right)
         # print(lmList)
         counter+=1
+    #     delayCounter+=1
+    # if delayCounter==8:
+    #     delayCounter=0
     if counter==11:
         counter=0
     cv2.imshow("Temple Run",img)
