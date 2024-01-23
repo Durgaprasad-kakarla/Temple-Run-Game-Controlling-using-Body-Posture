@@ -25,7 +25,7 @@ while True:
         # if left[0]<250 and right[0]>500:
         #     keyboard.press(Key.space)
         #     keyboard.release(Key.space)
-        if l1<80:
+        if l1<80 and left[1]>p1[1]:
             if counter==0:
                 keyboard.press(Key.up)
                 keyboard.release(Key.up)
